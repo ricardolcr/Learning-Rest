@@ -1,0 +1,33 @@
+{% block content %}
+  <h2>IP API</h2>
+  <form method="get">
+    <input type="text" name="IP">
+    <button type="submit">Pesquisar</button>  
+  </form>
+  
+  {% if status == "success" %}
+    <p>
+      <strong>Status:</strong> {{status}}<br/>
+      <strong>Country:</strong> {{country}}<br/>
+      <strong>Country Code:</strong> {{countryCode}}<br/>
+      <strong>Region:</strong> {{region}}<br/>
+      <strong>Region Name:</strong> {{regionName}}<br/>
+      <strong>City:</strong> {{city}}<br/>
+      <strong>ZIP:</strong> {{zip}}<br/>
+      <strong>LAT:</strong> {{lat}}<br/>
+      <strong>LON:</strong> {{lon}}<br/>
+      <strong>Timezone:</strong> {{timezone}}<br/>
+      <strong>ISP:</strong> {{isp}}<br/>
+      <strong>ORG:</strong> {{org}}<br/>
+      <strong>ASN:</strong> {{asn}}<br/>
+      <strong>Query:</strong> {{query}}<br/>
+    </p>
+  {%endif%}
+
+  {%if status == "fail" %}
+    <p>
+      <strong>A pesquisa falhou. Verifique o IP e tente novamente</strong>
+    </p>
+  {%endif%}
+
+{% endblock %}
